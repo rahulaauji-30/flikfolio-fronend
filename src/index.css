@@ -90,9 +90,9 @@ body{
   -webkit-overflow-scrolling: touch; /* For older versions of Safari */
   -overflow-scrolling: touch; /* For iOS devices */
 }
-.categories::-webkit-scrollbar{
+/* .categories::-webkit-scrollbar{
   width: 0;
-}
+} */
 .credits{
   background-color: white;
   padding: 5px;
