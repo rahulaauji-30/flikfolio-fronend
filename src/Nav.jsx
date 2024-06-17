@@ -1,24 +1,17 @@
 
 import { useState } from "react"
+import {Link} from "react-router-dom"
 const Nav = () => {
     const [isClicked, setClicked] = useState(false)
-    const handleClick = () => {
-        setClicked((pre) => !pre)
-    }
     return (
         <>
             <div className="main-nav">
                 <div className="navbar">
-                    <h1 style={{ margin: "0px", textAlign: "center" }}>FlickFolio</h1>
+                    <Link to={`/`} style={{ margin: "0px", textAlign: "center" }} id="h1">FlickFolio</Link>
                     <div className="side-nav">
                         <a href="/search" id="search">Search</a>
-                        <span onClick={handleClick} id="register">Register</span>
+                        <a href="/signup" id="register">Register</a>
                     </div>
-                </div>
-                <div className="register" style={{ display: isClicked ? "block" : "none" }}>
-                    <a href="/login">Log In</a>
-                    <br />
-                    <a href="/signup">Sign Up</a>
                 </div>
             </div>
         </>

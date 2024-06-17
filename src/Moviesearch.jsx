@@ -10,6 +10,7 @@ const Moviesearch = (props) => {
     const [isFavourite, setFavourite] = useState(false);
     const [isSaved, setSaved] = useState(false);
     const [isExpanded, setExpanded] = useState(false);
+    
     const showRead = {
         opacity: 1,
         transition: 'opacity 1s ease-in-out',
@@ -57,7 +58,7 @@ const Moviesearch = (props) => {
 
     return (
         <>
-            <a href={`/movie/${props.id}`}>
+            <a href={`/movie/${props.id}`} id="mov">
               <div className="movie" key={props.id}>
                   <div className="movie-img" onMouseOver={hanldeHover} onMouseOut={hanldeHover}>
                       <div className="bg"></div>

@@ -1,13 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Moviesearch from "./Moviesearch";
+import { Link } from "react-router-dom";
 
 const Navsearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
-    const [isClicked,setClicked] = useState(false)
-    const handleClick = ()=>{
-        setClicked((pre)=>!pre)
-    }
+    const [display,setDisplay] = useState(false)
     const handleSearchChange = async (event) => {
         const query = event.target.value;
         setSearchQuery(query);
@@ -29,11 +27,17 @@ const Navsearch = () => {
             document.getElementsByTagName("h1").innerHTML = "No Movie Found"
         }
     };
-
+    useEffect(()=>{
+        const size = window.innerWidth;
+      if(size > 786){
+        setDisplay((pre)=>!pre);
+      }
+      console.log(size);
+    },[window.innerWidth])
     return (
         <>
             <div className="navbar">
-                <h1 style={{ margin: "0px", textAlign: "center" }}>FlickFolio</h1>
+                <h1 style={{ margin: "0px", textAlign: "center",display:display?"block":"none" }}>FlickFolio</h1>
                 <input
                     type="text"
                     name="search"
@@ -44,8 +48,8 @@ const Navsearch = () => {
                     focus
                 />
                 <div className="side-nav">
-                    <a href="#search" id="search">Search</a>
-                    <button onClick={handleClick} id="register">Register</button>
+                    <Link to={`/`} id="search">Home</Link>
+                    <a href="/signup" id="register">Register</a>
                 </div>
             </div>
             <div className="result">
@@ -63,11 +67,6 @@ const Navsearch = () => {
                         />
                     ))
                 )}
-            </div>
-            <div className="register" style={{display:isClicked ? "hidden":"block"}}>
-                <a href="/login">Log In</a>
-                <br />
-                <a href="/signup">Sign Up</a>
             </div>
         </>
     );
