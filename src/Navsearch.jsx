@@ -46,6 +46,7 @@ const Navsearch = () => {
                     onChange={handleSearchChange}
                     placeholder="Search for a movie..."
                     focus
+                    autoComplete="false"
                 />
                 <div className="side-nav">
                     <Link to={`/`} id="search">Home</Link>
