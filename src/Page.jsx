@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Icons from "./Icons";
 import Profile from "./Profile";
-
+import { Helmet } from "react-helmet";
 const apiKey = "a07b4300034190175d95a527a3a11dc4";
 const endpoint = "https://api.themoviedb.org/3/";
 
@@ -65,6 +65,24 @@ const Page = () => {
 
   return (
     <>
+    <Helmet>
+              <title>{movie.title}</title>
+              <meta name="description" content={movie.overview}/>
+              <meta name="robots" content="index, follow"/>
+              <meta property="og:title" content={movie.title}/>
+              <meta property="og:description" content={
+                crews.map((crew)=>{
+                  return crew.name;
+                })
+              }/>
+              <meta property="og:description" content={
+                casts.map((cast)=>{
+                  return cast.name;
+                })
+              }/>
+              <meta property="og:url" content="https://flikfolio.vercel.app/"/>
+              <meta property="og:type" content="website"/>
+            </Helmet>
       <div className="ind-movie">
         <div className="top">
           <div id="cover">

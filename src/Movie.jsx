@@ -5,6 +5,8 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import {Helmet} from 'react-helmet';
+
 const Movie = (props) => {
     const [isVisible, setVisible] = useState(false);
     const [isFavourite, setFavourite] = useState(false);

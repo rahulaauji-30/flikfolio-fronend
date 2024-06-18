@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /movie/:id
+Sitemap: https://yourwebsite.com/sitemap.xml
