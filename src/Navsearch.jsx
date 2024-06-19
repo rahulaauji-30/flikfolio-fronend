@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React ,{ useEffect, useState } from "react";
 import Moviesearch from "./Moviesearch";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -37,19 +37,11 @@ const Navsearch = () => {
     return (
         <>
         <Helmet>
-        {searchResults.map((movie) => (
-          <React.Fragment key={movie.id}>
-            <meta
-              name={`description-title-${movie.id}`}
-              content={movie.title}
-            />
-            <meta
-              name={`description-overview-${movie.id}`}
-              content={movie.overview}
-            />
-          </React.Fragment>
-        ))}
-      </Helmet>
+                {searchResults.map((movie) => [
+                    <meta key={`title-${movie.id}`} name={`description-title-${movie.id}`} content={movie.title} />,
+                    <meta key={`overview-${movie.id}`} name={`description-overview-${movie.id}`} content={movie.overview} />
+                ])}
+            </Helmet>
             <div className="navbar">
                 <h1 style={{ margin: "0px", textAlign: "center",display:display?"block":"none" }}>FlickFolio</h1>
                 <input

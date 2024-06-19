@@ -58,14 +58,14 @@ const Moviesearch = (props) => {
 
     return (
         <>
-            <a href={`/movie/${props.id}`} id="mov">
+            <a href={`/movie/${props.title.replace(/\s+/g, '-')}/${props.id}`} id="mov">
               <div className="movie" key={props.id}>
                   <div className="movie-img" onMouseOver={hanldeHover} onMouseOut={hanldeHover}>
                       <div className="bg"></div>
                       <img src={`https://image.tmdb.org/t/p/w400/${props.poster}`} alt={props.title} />
                   </div>
                   <h3>{props.title}</h3>
-                  <a href={`/movie/${props.id}`}>Read More</a>
+                  <a href={`/movie/${props.title.replace(/\s+/g, '-')}/${props.id}`}>Read More</a>
               </div>
             </a>
         </>
