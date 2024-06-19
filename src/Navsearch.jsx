@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Moviesearch from "./Moviesearch";
 import { Link } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 const Navsearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
@@ -36,6 +36,20 @@ const Navsearch = () => {
     },[window.innerWidth])
     return (
         <>
+        <Helmet>
+        {searchResults.map((movie) => (
+          <React.Fragment key={movie.id}>
+            <meta
+              name={`description-title-${movie.id}`}
+              content={movie.title}
+            />
+            <meta
+              name={`description-overview-${movie.id}`}
+              content={movie.overview}
+            />
+          </React.Fragment>
+        ))}
+      </Helmet>
             <div className="navbar">
                 <h1 style={{ margin: "0px", textAlign: "center",display:display?"block":"none" }}>FlickFolio</h1>
                 <input

@@ -1,5 +1,6 @@
 import Movie from "./Movie"
 import { useState,useEffect } from "react";
+import { Helmet } from "react-helmet";
 export default function Home() {
     const [movies, setMovies] = useState([]);
     const apiKey = "a07b4300034190175d95a527a3a11dc4";
@@ -22,6 +23,11 @@ export default function Home() {
         fetchMovie();
       }, []);
     return (<>
+    <Helmet>
+        {movies.map((movie) => (
+                        <meta name={movie.title} content={movie.overview}/>
+                    ))}
+        </Helmet>
         <div className="cat">
             {/* <h1>Trending Now</h1> */}
             <div className="categories">
