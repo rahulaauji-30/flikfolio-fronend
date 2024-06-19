@@ -27,19 +27,11 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        {movies.map((movie) => (
-          <React.Fragment key={movie.id}>
-            <meta
-              name={`description-title-${movie.id}`}
-              content={movie.title}
-            />
-            <meta
-              name={`description-overview-${movie.id}`}
-              content={movie.overview}
-            />
-          </React.Fragment>
-        ))}
-      </Helmet>
+                {movies.map((movie) => [
+                    <meta key={`title-${movie.id}`} name={`description-title-${movie.id}`} content={movie.title} />,
+                    <meta key={`overview-${movie.id}`} name={`description-overview-${movie.id}`} content={movie.overview} />
+                ])}
+            </Helmet>
 
       <div className="cat">
         {/* <h1>Trending Now</h1> */}
