@@ -9,7 +9,7 @@ import Home from './Home'
 import Navsearch from './Navsearch'
 import Login from './Login'
 import Signup from './Signup'
-
+import { Analytics } from "@vercel/analytics/react"
 const router = createBrowserRouter([
   {
     path:"/",
