@@ -111,7 +111,7 @@ const Page = () => {
             <span style={{fontSize:"20px"}}>{Math.round(movie.vote_average*10)/10}</span>
           </div>
           <div className="icon">
-            <Icons />
+            <Icons userid="1" movieid={id}/>
           </div>
           <h2>Overview</h2>
           <p>{movie.overview}</p>
