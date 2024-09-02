@@ -1,7 +1,3 @@
-Great, thanks for the update! Here’s the revised README.md with the correct backend information and live website link:
-
----
-
 # FlikFolio Frontend
 
 Welcome to the FlikFolio Frontend repository! FlikFolio is a web application designed to help users search for movies, save them for later, and track their favorite films. The frontend is developed using React.js, and it interacts with a Flask-based backend API. 
